@@ -40,3 +40,8 @@ button {
   text-indent: 10px;
   font-size: 80%;
 }
+
+:-webkit-full-screen div {
+  width: 100%;
+  height: 100%;
+}
