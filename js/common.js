@@ -32,4 +32,8 @@ function tmpl(str, data) {
     return data ? fn(data) : fn;
 }
 
-
+forEach = function(obj, f, optObj) {
+  for (var key in obj) {
+    f.call(optObj, obj[key], key, obj);
+  }
+};

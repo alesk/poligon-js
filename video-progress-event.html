@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Testing video progress event</title>
+
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link href="css/common.css" rel="stylesheet" />
+    <script src="js/common.js"></script>
+
+    <style>
+
+      #monitor {
+        font-size: 16px;
+      }
+
+      #video-wrapper {
+        background: #000;
+      }
+
+      #video-wrapper {
+        position: relative;
+        width: 100%;
+      }
+
+      
+      video {
+        width: 100%;
+        height: auto;
+      }
+
+      #progress-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 8px;
+        background: #ff0000;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- page content -->
+    <h1>Progress event</h1>
+
+    <p>
+      On some devices progress event fires unreliably, meaning:
+      
+      1. it doesn't fire at all
+      2. it fires 2 times without any new data in video.buffer and stops
+      3. it works as expected for some time but suddenly stops before the end
+
+
+      This behaviour has been detected on:
+
+      - Samsung Galaxy S4 device.
+    </p>
+
+
+    <div id="video-wrapper">
+      <div id="monitor">
+        <p>Progress fired: <span id="progress-counter">0</span></p>
+      </div>
+      <div id="video-holder"></div>
+      <div id="progress-bar"></div>
+    </div>
+
+
+    <script src="js/video-progress-event.js" ></script>
+  </body>
+</html>
